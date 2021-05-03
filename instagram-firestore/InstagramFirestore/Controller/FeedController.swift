@@ -7,23 +7,48 @@
 
 import UIKit
 
-class FeedController: UIViewController {
+private let reuseIdentifier = "cell"
 
+class FeedController: UICollectionViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .orange
+        configureUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configureUI(){
+        collectionView.backgroundColor = .white
+        
+        collectionView.register(FeedCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
-    */
+    
+    
+}
 
+//Mark: - UICollectionViewDataSource
+
+extension FeedController {
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FeedCell
+        return cell
+    }
+}
+
+//Mark: - UICollectoinViewDelegateFlowLayout
+
+extension FeedController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        // width as cell width, height =
+        let width = view.frame.width
+        var height = width + 8 + 40 + 8
+        height += 110
+        
+        return CGSize(width: width, height: height)
+    }
 }
