@@ -6,16 +6,20 @@
 //
 
 import UIKit
+import Firebase
 
 class MainTabController: UITabBarController {
-
+    
+    // MARK: - Lifecycke
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initViewController()
-
+        isUserLoggedIn()
+     //   logout()
     }
     
+    // MARK: - Helpers
     
     func initViewController() {
         view.backgroundColor = .white
@@ -40,6 +44,15 @@ class MainTabController: UITabBarController {
         return nav
     }
     
-
-
+    func isUserLoggedIn() {
+        if Auth.auth().currentUser == nil {
+            DispatchQueue.main.async {
+                let controller = LoginController()
+                let nav = UINavigationController(rootViewController: controller)
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: true, completion: nil)
+            }
+            
+        }
+    }
 }
