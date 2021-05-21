@@ -79,6 +79,7 @@ extension SearchController {
 
 extension SearchController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let users = filteredUsers.count != 0 ? filteredUsers : self.users
         let controller = ProfileController(user: users[indexPath.row])
         navigationController?.pushViewController(controller, animated: true)
     }
