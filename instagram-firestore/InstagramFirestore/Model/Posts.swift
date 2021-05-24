@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 struct Posts {
     var caption: String
@@ -14,7 +15,7 @@ struct Posts {
     let ownerUid: String
     let ownerUsername: String
     let ownerImageUrl: String
-    let timestamp: String
+    let timestamp: Timestamp!
     let postId: String
     
     init(postId: String, dictionary: [String: Any]) {
@@ -24,7 +25,7 @@ struct Posts {
         self.ownerUid = dictionary["ownerUid"] as? String ?? ""
         self.ownerUsername = dictionary["ownerUsername"] as? String ?? ""
         self.ownerImageUrl = dictionary["ownerImageUrl"] as? String ?? ""
-        self.timestamp = dictionary["timestamp"] as? String ?? ""
+        self.timestamp = dictionary["timestamp"] as? Timestamp
         self.postId = postId
     }
 }

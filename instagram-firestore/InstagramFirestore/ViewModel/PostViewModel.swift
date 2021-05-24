@@ -9,7 +9,7 @@ import Foundation
 
 struct PostViewModel {
     
-    private var post: Posts
+    let post: Posts
     
     var caption: String { return post.caption }
     var likes: String {
