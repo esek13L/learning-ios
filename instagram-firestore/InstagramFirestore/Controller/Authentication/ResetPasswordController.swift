@@ -17,6 +17,7 @@ class ResetPasswordController: UIViewController {
     
     private let emailTextField = CustomTextField(placeholder: "Email")
     private var viewModel = ResetPasswordViewModel()
+    var email: String?
     weak var delegate: ResetPasswordControllerDelegate?
     
     private let iconImage : UIImageView = {
@@ -100,6 +101,9 @@ class ResetPasswordController: UIViewController {
     }
     
     func configureTextEditObserver(){
+        viewModel.email = email
+        emailTextField.text = email
+        updateForm()
         emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 

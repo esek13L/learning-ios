@@ -18,7 +18,11 @@ class FeedController: UICollectionViewController {
         didSet { collectionView.reloadData() }
     }
     
-    var post: Posts?
+    var post: Posts? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     //MARK: - Lifecycle
     
@@ -26,6 +30,10 @@ class FeedController: UICollectionViewController {
         super.viewDidLoad()
         configureUI()
         fetchPosts()
+        
+        if post != nil {
+            checkIfUserLikedPosts()
+        }
     }
     
     //MARK: - Actions
@@ -79,12 +87,18 @@ class FeedController: UICollectionViewController {
     }
     
     func checkIfUserLikedPosts() {
-        self.posts.forEach { (post) in
+        if let post = post {
+            PostService.checkIfUserLikedPost(post: post) { didLike in
+                self.post?.didLike = didLike
+            }
+        }
+        else { self.posts.forEach { (post) in
             PostService.checkIfUserLikedPost(post: post) { (didLike) in
                 if let index = self.posts.firstIndex(where: {$0.postId == post.postId}) {
                     self.posts[index].didLike = didLike
                 }
             }
+        }
         }
     }
     
