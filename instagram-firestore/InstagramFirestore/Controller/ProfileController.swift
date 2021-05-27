@@ -68,7 +68,6 @@ class ProfileController: UICollectionViewController {
         PostService.fetchCurrentUserPosts(uid: user.uid) { (posts) in
             self.posts = posts
             self.collectionView.reloadData()
-            print("Debug: data \(posts)")
         }
     }
     
@@ -139,6 +138,8 @@ extension ProfileController: ProfileHeaderDelegate {
             UserService.unfollow(uid: user.uid) { error in
                 self.user.isFollowed = false
                 self.collectionView.reloadData()
+                
+                PostService.updateUserFeedAfterFollowing(user: user, didFollow: false)
             }
         } else {
             guard let tab = self.tabBarController as? MainTabController else { return }
@@ -149,6 +150,8 @@ extension ProfileController: ProfileHeaderDelegate {
                 self.collectionView.reloadData()
                 
                 NotificationService.uploadNotification(toUid: user.uid, fromUser: currentUser, type: .follow)
+                
+                PostService.updateUserFeedAfterFollowing(user: user, didFollow: true)
             }
             
         }
