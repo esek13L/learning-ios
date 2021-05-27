@@ -14,7 +14,9 @@ class FeedController: UICollectionViewController {
     
     //MARK: - Properties
     
-    private var posts = [Posts]()
+    private var posts = [Posts]() {
+        didSet { collectionView.reloadData() }
+    }
     
     var post: Posts?
     
@@ -71,8 +73,18 @@ class FeedController: UICollectionViewController {
         
         PostService.fetchPosts { (posts) in
             self.posts = posts
+            self.checkIfUserLikedPosts()
             self.collectionView.refreshControl?.endRefreshing()
-            self.collectionView.reloadData()
+        }
+    }
+    
+    func checkIfUserLikedPosts() {
+        self.posts.forEach { (post) in
+            PostService.checkIfUserLikedPost(post: post) { (didLike) in
+                if let index = self.posts.firstIndex(where: {$0.postId == post.postId}) {
+                    self.posts[index].didLike = didLike
+                }
+            }
         }
     }
     
@@ -117,8 +129,38 @@ extension FeedController: UICollectionViewDelegateFlowLayout {
 //MARK: - FeedCellDelegate
 
 extension FeedController: FeedCellDelegate {
+    func cell(_ cell: FeedCell, showProfile uid: String) {
+        UserService.fetchUser(withUid: uid) { (user) in
+            let controller = ProfileController(user: user)
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
     func cell(_ cell: FeedCell, showComment post: Posts) {
         let controller = CommentController(post: post)
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func cell(_ cell: FeedCell, didLike post: Posts) {
+        cell.viewModel?.post.didLike.toggle()
+        
+        if post.didLike {
+            PostService.unlikePost(post: post) { (error) in
+                cell.likeButton.setImage(#imageLiteral(resourceName: "like_unselected"), for: .normal)
+                cell.viewModel?.post.likes = post.likes - 1
+            }
+        } else {
+            PostService.likePost(post: post) { (error) in
+                guard let tab = self.tabBarController as? MainTabController else { return }
+                guard let currentUser = tab.user else { return }
+                
+                cell.likeButton.setImage(#imageLiteral(resourceName: "like_selected"), for: .normal)
+                cell.likeButton.tintColor = .red
+                cell.viewModel?.post.likes = post.likes + 1
+                
+                NotificationService
+                    .uploadNotification(toUid: post.ownerUid, fromUser: currentUser, type: .like, post: post)
+            }
+        }
     }
 }

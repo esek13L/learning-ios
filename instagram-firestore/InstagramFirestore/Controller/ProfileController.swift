@@ -141,9 +141,14 @@ extension ProfileController: ProfileHeaderDelegate {
                 self.collectionView.reloadData()
             }
         } else {
+            guard let tab = self.tabBarController as? MainTabController else { return }
+            guard let currentUser = tab.user else { return }
+            
             UserService.follow(uid: user.uid) { error in
                 self.user.isFollowed = true
                 self.collectionView.reloadData()
+                
+                NotificationService.uploadNotification(toUid: user.uid, fromUser: currentUser, type: .follow)
             }
             
         }

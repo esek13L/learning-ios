@@ -17,6 +17,7 @@ struct Posts {
     let ownerImageUrl: String
     let timestamp: Timestamp!
     let postId: String
+    var didLike = false
     
     init(postId: String, dictionary: [String: Any]) {
         self.caption = dictionary["caption"] as? String ?? ""

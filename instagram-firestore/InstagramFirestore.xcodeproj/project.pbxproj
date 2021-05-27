@@ -16,7 +16,11 @@
 		8A1AE2BA26502ABE00531552 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1AE2B926502ABE00531552 /* Constants.swift */; };
 		8A1AE2BD26502C8900531552 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1AE2BC26502C8900531552 /* User.swift */; };
 		8A1AE2C02650320600531552 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1AE2BF2650320600531552 /* ProfileViewModel.swift */; };
+		8A3D756A265B7A6D00B6D4EB /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D7569265B7A6C00B6D4EB /* NotificationCell.swift */; };
 		8A46A3BC26492B7F00A494E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A46A3BB26492B7F00A494E0 /* GoogleService-Info.plist */; };
+		8A49FB0B265D06D100913003 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49FB0A265D06D100913003 /* Notification.swift */; };
+		8A49FB0E265D08A000913003 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49FB0D265D08A000913003 /* NotificationService.swift */; };
+		8A49FB11265D1A1200913003 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49FB10265D1A1200913003 /* NotificationViewModel.swift */; };
 		8A5A57FA26515D9D00F1A13B /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5A57F926515D9D00F1A13B /* UserCell.swift */; };
 		8A5A57FD2651651000F1A13B /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5A57FC2651651000F1A13B /* UserCellViewModel.swift */; };
 		8A5CA625263FB66500FC4F4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5CA624263FB66500FC4F4B /* AppDelegate.swift */; };
@@ -61,7 +65,11 @@
 		8A1AE2B926502ABE00531552 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8A1AE2BC26502C8900531552 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8A1AE2BF2650320600531552 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		8A3D7569265B7A6C00B6D4EB /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		8A46A3BB26492B7F00A494E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8A49FB0A265D06D100913003 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		8A49FB0D265D08A000913003 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		8A49FB10265D1A1200913003 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		8A5A57F926515D9D00F1A13B /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		8A5A57FC2651651000F1A13B /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
 		8A5CA621263FB66500FC4F4B /* InstagramFirestore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramFirestore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +193,7 @@
 				8A1AE2B626502A7C00531552 /* UserService.swift */,
 				8A79697A26578525002CE8ED /* PostService.swift */,
 				8AD106D52658D0E1004E1A3C /* CommentService.swift */,
+				8A49FB0D265D08A000913003 /* NotificationService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -213,6 +222,7 @@
 				8A5A57FC2651651000F1A13B /* UserCellViewModel.swift */,
 				8A8C54572657BAF90042AF04 /* PostViewModel.swift */,
 				8AD106DB265AA4A0004E1A3C /* CommentViewModel.swift */,
+				8A49FB10265D1A1200913003 /* NotificationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -223,6 +233,7 @@
 				8A1AE2BC26502C8900531552 /* User.swift */,
 				8A8C54542657B7F50042AF04 /* Posts.swift */,
 				8AD106D8265A9344004E1A3C /* Comment.swift */,
+				8A49FB0A265D06D100913003 /* Notification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +249,7 @@
 				8A796977265753DA002CE8ED /* InputTextView.swift */,
 				8A8C545D265812120042AF04 /* CommentCell.swift */,
 				8A8C5460265826EE0042AF04 /* CommentTextInputView.swift */,
+				8A3D7569265B7A6C00B6D4EB /* NotificationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -383,6 +395,7 @@
 				8AA0A397264994CD00BDAB17 /* AuthService.swift in Sources */,
 				8A5CA65F263FEB2300FC4F4B /* RegisterController.swift in Sources */,
 				8AD106D9265A9344004E1A3C /* Comment.swift in Sources */,
+				8A49FB11265D1A1200913003 /* NotificationViewModel.swift in Sources */,
 				8A1AE2C02650320600531552 /* ProfileViewModel.swift in Sources */,
 				8A8C54552657B7F50042AF04 /* Posts.swift in Sources */,
 				8A8C545B265810DA0042AF04 /* CommentController.swift in Sources */,
@@ -395,12 +408,15 @@
 				8A065359264FA42A00A13F29 /* ProfileHeader.swift in Sources */,
 				8A5CA629263FB66500FC4F4B /* ViewController.swift in Sources */,
 				8A5CA648263FB96E00FC4F4B /* SearchController.swift in Sources */,
+				8A49FB0B265D06D100913003 /* Notification.swift in Sources */,
 				8A796978265753DA002CE8ED /* InputTextView.swift in Sources */,
 				8A5A57FA26515D9D00F1A13B /* UserCell.swift in Sources */,
 				8A5CA625263FB66500FC4F4B /* AppDelegate.swift in Sources */,
 				8A5A57FD2651651000F1A13B /* UserCellViewModel.swift in Sources */,
 				8AD106DC265AA4A0004E1A3C /* CommentViewModel.swift in Sources */,
 				8A5CA64B263FBA6C00FC4F4B /* NotificationController.swift in Sources */,
+				8A3D756A265B7A6D00B6D4EB /* NotificationCell.swift in Sources */,
+				8A49FB0E265D08A000913003 /* NotificationService.swift in Sources */,
 				8A5CA651263FBA9D00FC4F4B /* ProfileController.swift in Sources */,
 				8A79697B26578525002CE8ED /* PostService.swift in Sources */,
 				8A1AE2B726502A7C00531552 /* UserService.swift in Sources */,
