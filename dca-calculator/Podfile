@@ -1,0 +1,48 @@
+platform :ios, '12.0'
+
+use_frameworks!
+
+workspace 'dca-calculator'
+
+#core module
+def core_pods
+    pod 'MBProgressHUD'
+    pod 'Loaf'
+end
+
+target 'core' do
+    project 'core/core.project'
+    core_pods
+end
+
+#network module
+def networking_pods
+
+end
+
+target 'networking' do
+    project 'networking/networking.project'
+    networking_pods
+end
+
+#calculator module
+def calculator_pods
+    core_pods
+end
+
+target 'calculator' do
+    project 'calculator/calculator.project'
+    calculator_pods
+end
+
+#application
+def application_pods
+    core_pods
+    calculator_pods
+    networking_pods
+end
+
+target 'application' do
+    project 'application/application.project'
+    application_pods
+end
