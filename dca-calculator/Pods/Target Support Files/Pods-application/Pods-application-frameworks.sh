@@ -174,11 +174,19 @@ code_sign_if_enabled() {
   fi
 }
 
-if [[ "$CONFIGURATION" == "Debug" ]]; then
+if [[ "$CONFIGURATION" == "Debug (dev)" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Loaf/Loaf.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
 fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
+if [[ "$CONFIGURATION" == "Debug (prod)" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Loaf/Loaf.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
+fi
+if [[ "$CONFIGURATION" == "Release (dev)" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Loaf/Loaf.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
+fi
+if [[ "$CONFIGURATION" == "Release (prod)" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Loaf/Loaf.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
 fi

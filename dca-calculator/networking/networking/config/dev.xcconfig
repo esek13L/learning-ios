@@ -1,0 +1,14 @@
+//
+//  dev.xcconfig
+//  networking
+//
+//  Created by Esekiel Surbakti on 05/06/21.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "../Pods/Target Support Files/Pods-networking/Pods-networking.debug (dev).xcconfig"
+
+API_KEY         = W19FLFWYSLMMT41W
+BASE_URL        = https:/\/\www.alphavantage.co/

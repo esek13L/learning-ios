@@ -18,5 +18,9 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>base_url</key>
+	<string>${BASE_URL}</string>
+	<key>api_key</key>
+	<string>${API_KEY}</string>
 </dict>
 </plist>
