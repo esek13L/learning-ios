@@ -7,17 +7,17 @@
 
 import Foundation
 
-public struct Enviroment {
+struct Enviroment {
     
-   public static func configuration(_ key: Plist) -> String {
-    let bundle = Bundle(for: Networking.self)
+    static func configuration(_ key: Route) -> String {
+        let bundle = Bundle(for: Networking.self)
         if let path = bundle.path(forResource: "Info", ofType: "plist") {
             let nsDictionary = NSDictionary(contentsOfFile: path)
             switch key {
             case .baseUrl:
-                return nsDictionary![Plist.baseUrl.value()] as? String ?? ""
+                return nsDictionary![Route.baseUrl.value()] as? String ?? ""
             case .apiKey:
-                return nsDictionary![Plist.apiKey.value()] as? String ?? ""
+                return nsDictionary![Route.apiKey.value()] as? String ?? ""
             }
         } else {
             fatalError("Unable to locate plist file")
@@ -25,7 +25,7 @@ public struct Enviroment {
     }
 }
 
-public enum Plist {
+enum Route {
     case baseUrl
     case apiKey
     

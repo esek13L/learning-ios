@@ -8,15 +8,15 @@
 import Foundation
 
 
-struct SearchResults: Decodable {
-    let items: [SearchResult]
+struct SearchResults: Codable {
+    var items: [SearchResult]
     
     enum CodingKeys: String, CodingKey {
         case items = "bestMatches"
     }
 }
 
-struct SearchResult: Decodable {
+struct SearchResult: Codable {
     let symbol: String
     let name: String
     let type: String

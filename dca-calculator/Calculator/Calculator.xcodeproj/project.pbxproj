@@ -14,6 +14,7 @@
 		8A7B595E266B3C2D006DB76F /* SearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A7B595C266B3C2D006DB76F /* SearchController.xib */; };
 		8A7B5979266B405D006DB76F /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7B5977266B405D006DB76F /* SearchCell.swift */; };
 		8A7B597A266B405D006DB76F /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A7B5978266B405D006DB76F /* SearchCell.xib */; };
+		8A892039267253D200304410 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A892038267253D200304410 /* SearchViewModel.swift */; };
 		8AA01791266B555B0047C4F8 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA01790266B555B0047C4F8 /* SearchResults.swift */; };
 		8AA017AF266B77400047C4F8 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA017AE266B77400047C4F8 /* SearchService.swift */; };
 /* End PBXBuildFile section */
@@ -31,6 +32,7 @@
 		8A7B595C266B3C2D006DB76F /* SearchController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchController.xib; sourceTree = "<group>"; };
 		8A7B5977266B405D006DB76F /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		8A7B5978266B405D006DB76F /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
+		8A892038267253D200304410 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		8AA01790266B555B0047C4F8 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		8AA017AE266B77400047C4F8 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		9A227F42C91B1ED3217B13E6 /* Pods-calculator.release (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-calculator.release (dev).xcconfig"; path = "Target Support Files/Pods-calculator/Pods-calculator.release (dev).xcconfig"; sourceTree = "<group>"; };
@@ -85,25 +87,26 @@
 		8A7B58FE266B3725006DB76F /* calculator */ = {
 			isa = PBXGroup;
 			children = (
-				8AA017AD266B77270047C4F8 /* service */,
-				8A7B5971266B3FEC006DB76F /* controller */,
-				8A7B5970266B3FE6006DB76F /* view */,
-				8A7B596F266B3FDE006DB76F /* model */,
+				8A8920332672525A00304410 /* search */,
 				8A7B5900266B3725006DB76F /* Info.plist */,
 				8A7B5958266B3C02006DB76F /* Calculator.swift */,
 			);
 			path = calculator;
 			sourceTree = "<group>";
 		};
-		8A7B596F266B3FDE006DB76F /* model */ = {
+		8A8920332672525A00304410 /* search */ = {
 			isa = PBXGroup;
 			children = (
-				8AA01790266B555B0047C4F8 /* SearchResults.swift */,
+				8AA017AD266B77270047C4F8 /* service */,
+				8A8920372672527D00304410 /* viewmodel */,
+				8A8920362672527800304410 /* model */,
+				8A8920352672527200304410 /* controller */,
+				8A8920342672526A00304410 /* view */,
 			);
-			path = model;
+			path = search;
 			sourceTree = "<group>";
 		};
-		8A7B5970266B3FE6006DB76F /* view */ = {
+		8A8920342672526A00304410 /* view */ = {
 			isa = PBXGroup;
 			children = (
 				8A7B5977266B405D006DB76F /* SearchCell.swift */,
@@ -113,13 +116,29 @@
 			path = view;
 			sourceTree = "<group>";
 		};
-		8A7B5971266B3FEC006DB76F /* controller */ = {
+		8A8920352672527200304410 /* controller */ = {
 			isa = PBXGroup;
 			children = (
 				8A7B595B266B3C2D006DB76F /* SearchController.swift */,
 				8A7B595C266B3C2D006DB76F /* SearchController.xib */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		8A8920362672527800304410 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8AA01790266B555B0047C4F8 /* SearchResults.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		8A8920372672527D00304410 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				8A892038267253D200304410 /* SearchViewModel.swift */,
+			);
+			path = viewmodel;
 			sourceTree = "<group>";
 		};
 		8AA017AD266B77270047C4F8 /* service */ = {
@@ -245,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A7B5959266B3C02006DB76F /* Calculator.swift in Sources */,
+				8A892039267253D200304410 /* SearchViewModel.swift in Sources */,
 				8A7B5979266B405D006DB76F /* SearchCell.swift in Sources */,
 				8AA017AF266B77400047C4F8 /* SearchService.swift in Sources */,
 				8AA01791266B555B0047C4F8 /* SearchResults.swift in Sources */,
