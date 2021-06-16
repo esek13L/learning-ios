@@ -16,7 +16,7 @@ enum Mode {
 
 class SearchViewModel {
     
-    var service: SearchService
+    var service: SearchServiceProtocol
     
     @Published var changeMe: String = ""
     @Published var results: SearchResults?
@@ -29,16 +29,18 @@ class SearchViewModel {
     
     var subscribers = Set<AnyCancellable>()
     
-    init(service: SearchService) {
+    init(service: SearchServiceProtocol = SearchService()) {
         self.service = service
     }
     
     func searchCompany(keywords: String) {
-        service.fetchSymbolPublisher(keyword: keywords).sink { receiveCompletion in
+        isLoading = true
+        service.fetchSymbolPublisher(keyword: keywords).sink { [unowned self] receiveCompletion in
             switch receiveCompletion {
             case .failure(let error):
                 self.requestError = error.value()
             case .finished:
+                isLoading = false
                 break
             }
         } receiveValue: { results in

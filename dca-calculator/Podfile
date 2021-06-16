@@ -33,7 +33,12 @@ end
 target 'calculator' do
     project 'calculator/calculator.project'
     calculator_pods
+    target 'calculatorTests' do
+        calculator_pods
+    end
 end
+
+
 
 #application
 def application_pods
@@ -46,3 +51,5 @@ target 'application' do
     project 'application/application.project'
     application_pods
 end
+
+

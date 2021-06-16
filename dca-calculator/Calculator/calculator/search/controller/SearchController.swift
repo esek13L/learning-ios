@@ -78,7 +78,6 @@ public class SearchController: UIViewController, UIAnimatable {
         viewModel.$searchQuery.debounce(for: .milliseconds(500), scheduler: RunLoop.main)
             .sink { query in
                 guard let searchQuery = query, !searchQuery.isEmpty else { return }
-                viewModel.isLoading = true
                 viewModel.searchCompany(keywords: searchQuery)
             }.store(in: &viewModel.subscribers)
         
@@ -91,7 +90,6 @@ public class SearchController: UIViewController, UIAnimatable {
         
         viewModel.$requestError.sink { requestError in
             guard let error = requestError else { return }
-            viewModel.isLoading = false
             print(error)
         }.store(in: &viewModel.subscribers)
         

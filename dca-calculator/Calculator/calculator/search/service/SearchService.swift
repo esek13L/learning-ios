@@ -8,7 +8,11 @@
 import Combine
 import networking
 
-struct SearchService {
+protocol SearchServiceProtocol {
+    func fetchSymbolPublisher(keyword: String) -> AnyPublisher<SearchResults, APIError>
+}
+
+struct SearchService: SearchServiceProtocol {
     
     private let apiClient = APIClient.instance
     
