@@ -38,6 +38,7 @@ class SearchViewModel {
         service.fetchSymbolPublisher(keyword: keywords).sink { [unowned self] receiveCompletion in
             switch receiveCompletion {
             case .failure(let error):
+                isLoading = false
                 self.requestError = error.value()
             case .finished:
                 isLoading = false

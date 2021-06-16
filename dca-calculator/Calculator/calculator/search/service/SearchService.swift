@@ -19,7 +19,10 @@ struct SearchService: SearchServiceProtocol {
     private let apiKey = APIContract.API_KEY
     
     func fetchSymbolPublisher(keyword: String) -> AnyPublisher<SearchResults, APIError> {
-        return apiClient.requestHttp(path: "\(APIContract.SYMBOL_SEARCH)\(keyword)&apikey=\(apiKey)", method: .get)
+        guard let keywords = keyword.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
+            return Fail(error: APIError.badRequest(400)).eraseToAnyPublisher()
+        }
+        return apiClient.requestHttp(path: "\(APIContract.SYMBOL_SEARCH)\(keywords)&apikey=\(apiKey)", method: .get)
     }
     
     
