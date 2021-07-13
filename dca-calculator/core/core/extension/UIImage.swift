@@ -10,6 +10,7 @@ import UIKit
 public extension UIImage {
     enum AssetIdentifier: String {
         case dca = "imgDca"
+        case launch = "imgLaunch"
     }
     
     convenience init!(asset: AssetIdentifier) {

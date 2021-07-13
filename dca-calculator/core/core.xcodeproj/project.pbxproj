@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A31D5F3269D72A70073230C /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A31D5F2269D72A70073230C /* Double.swift */; };
+		8A31D5F7269D77700073230C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A31D5F6269D77700073230C /* UIColor.swift */; };
 		8A469C58266CA1290058AB26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A469C57266CA1290058AB26 /* Assets.xcassets */; };
 		8A469C5C266CA14E0058AB26 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A469C5B266CA14E0058AB26 /* UIImage.swift */; };
 		8A469C63266D05910058AB26 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A469C62266D05910058AB26 /* Core.swift */; };
 		8A469C69266D07F60058AB26 /* UIAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A469C68266D07F60058AB26 /* UIAnimatable.swift */; };
+		8A7843D92682264E00D7D133 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7843D82682264E00D7D133 /* Date.swift */; };
 		8A7B58EB266B371A006DB76F /* core.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A7B58E9266B371A006DB76F /* core.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8ABB930F269C4D200072C629 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB930E269C4D200072C629 /* Int.swift */; };
+		8AEABA87267A2B6500F14A3B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEABA86267A2B6500F14A3B /* String.swift */; };
+		8AEABA91267A669A00F14A3B /* UITextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEABA90267A669A00F14A3B /* UITextfield.swift */; };
 		D5874C4F734806A17FFB590A /* Pods_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171D281D727BF74E20FFA7C1 /* Pods_core.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,13 +27,19 @@
 		400C7A35D9D7A7B3A851AF88 /* Pods-core.debug (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core.debug (prod).xcconfig"; path = "Target Support Files/Pods-core/Pods-core.debug (prod).xcconfig"; sourceTree = "<group>"; };
 		485F8CD3EE0A1475AA046765 /* Pods-core.release (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core.release (dev).xcconfig"; path = "Target Support Files/Pods-core/Pods-core.release (dev).xcconfig"; sourceTree = "<group>"; };
 		5C5392290E54E0DA74B5D44F /* Pods-core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core.release.xcconfig"; path = "Target Support Files/Pods-core/Pods-core.release.xcconfig"; sourceTree = "<group>"; };
+		8A31D5F2269D72A70073230C /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		8A31D5F6269D77700073230C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		8A469C57266CA1290058AB26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A469C5B266CA14E0058AB26 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		8A469C62266D05910058AB26 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		8A469C68266D07F60058AB26 /* UIAnimatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAnimatable.swift; sourceTree = "<group>"; };
+		8A7843D82682264E00D7D133 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		8A7B58E6266B371A006DB76F /* core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A7B58E9266B371A006DB76F /* core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
 		8A7B58EA266B371A006DB76F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8ABB930E269C4D200072C629 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		8AEABA86267A2B6500F14A3B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		8AEABA90267A669A00F14A3B /* UITextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextfield.swift; sourceTree = "<group>"; };
 		A4C4A4354E6AEEF7EE887A5B /* Pods-core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core.debug.xcconfig"; path = "Target Support Files/Pods-core/Pods-core.debug.xcconfig"; sourceTree = "<group>"; };
 		C0272232E32C20317970B7C2 /* Pods-core.release (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core.release (prod).xcconfig"; path = "Target Support Files/Pods-core/Pods-core.release (prod).xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +83,12 @@
 			children = (
 				8A469C5B266CA14E0058AB26 /* UIImage.swift */,
 				8A469C68266D07F60058AB26 /* UIAnimatable.swift */,
+				8AEABA86267A2B6500F14A3B /* String.swift */,
+				8AEABA90267A669A00F14A3B /* UITextfield.swift */,
+				8A7843D82682264E00D7D133 /* Date.swift */,
+				8ABB930E269C4D200072C629 /* Int.swift */,
+				8A31D5F2269D72A70073230C /* Double.swift */,
+				8A31D5F6269D77700073230C /* UIColor.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -211,8 +229,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AEABA91267A669A00F14A3B /* UITextfield.swift in Sources */,
+				8A7843D92682264E00D7D133 /* Date.swift in Sources */,
+				8A31D5F3269D72A70073230C /* Double.swift in Sources */,
 				8A469C69266D07F60058AB26 /* UIAnimatable.swift in Sources */,
+				8A31D5F7269D77700073230C /* UIColor.swift in Sources */,
+				8ABB930F269C4D200072C629 /* Int.swift in Sources */,
 				8A469C63266D05910058AB26 /* Core.swift in Sources */,
+				8AEABA87267A2B6500F14A3B /* String.swift in Sources */,
 				8A469C5C266CA14E0058AB26 /* UIImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

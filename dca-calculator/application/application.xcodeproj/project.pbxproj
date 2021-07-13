@@ -20,6 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8A31D5FC269D8D990073230C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A7B5917266B3976006DB76F /* calculator.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8A67F4C02678F7B5001F41C8;
+			remoteInfo = calculatorTests;
+		};
 		8A7B5915266B3973006DB76F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8A7B5911266B3973006DB76F /* core.xcodeproj */;
@@ -155,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				8A7B591C266B3976006DB76F /* calculator.framework */,
+				8A31D5FD269D8D990073230C /* calculatorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -251,6 +259,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		8A31D5FD269D8D990073230C /* calculatorTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = calculatorTests.xctest;
+			remoteRef = 8A31D5FC269D8D990073230C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		8A7B5916266B3973006DB76F /* core.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -491,7 +506,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.esek13ls.application;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esek13ls.dcacalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -511,7 +526,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.esek13ls.application;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esek13ls.dcacalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -592,7 +607,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.esek13ls.application;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esek13ls.dcacalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -667,7 +682,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.esek13ls.application;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esek13ls.dcacalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

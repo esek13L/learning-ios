@@ -9,7 +9,8 @@ import Combine
 import networking
 
 protocol SearchServiceProtocol {
-    func fetchSymbolPublisher(keyword: String) -> AnyPublisher<SearchResults, APIError>
+    func fetchSymbolPublisher(keywords: String) -> AnyPublisher<SearchResults, APIError>
+    func fetchMonthlyAdjustedPublisher(keywords: String) -> AnyPublisher<MonthlyAdjusted, APIError>
 }
 
 struct SearchService: SearchServiceProtocol {
@@ -18,12 +19,20 @@ struct SearchService: SearchServiceProtocol {
     
     private let apiKey = APIContract.API_KEY
     
-    func fetchSymbolPublisher(keyword: String) -> AnyPublisher<SearchResults, APIError> {
-        guard let keywords = keyword.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
+    func fetchSymbolPublisher(keywords: String) -> AnyPublisher<SearchResults, APIError> {
+        guard let keywords = keywords.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
             return Fail(error: APIError.badRequest(400)).eraseToAnyPublisher()
         }
         return apiClient.requestHttp(path: "\(APIContract.SYMBOL_SEARCH)\(keywords)&apikey=\(apiKey)", method: .get)
     }
+    
+    func fetchMonthlyAdjustedPublisher(keywords: String) -> AnyPublisher<MonthlyAdjusted, APIError> {
+        guard let keywords = keywords.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
+            return Fail(error: APIError.badRequest(400)).eraseToAnyPublisher()
+        }
+        return apiClient.requestHttp(path: "\(APIContract.MONTHLY_ADJUSTED_SEARCH)\(keywords)&apikey=\(apiKey)", method: .get)
+    }
+    
     
     
 }

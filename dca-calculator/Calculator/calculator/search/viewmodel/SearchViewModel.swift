@@ -24,8 +24,7 @@ class SearchViewModel {
     @Published var searchQuery: String?
     @Published var mode: Mode = Mode.onboarding
     @Published var isLoading = false
-    
-    var result: SearchResult?
+    @Published var asset: Asset?
     
     var subscribers = Set<AnyCancellable>()
     
@@ -35,7 +34,7 @@ class SearchViewModel {
     
     func searchCompany(keywords: String) {
         isLoading = true
-        service.fetchSymbolPublisher(keyword: keywords).sink { [unowned self] receiveCompletion in
+        service.fetchSymbolPublisher(keywords: keywords).sink { [unowned self] receiveCompletion in
             switch receiveCompletion {
             case .failure(let error):
                 isLoading = false
@@ -47,7 +46,24 @@ class SearchViewModel {
         } receiveValue: { results in
             self.results = results
         }.store(in: &subscribers)
-        
+    }
+    
+    func fetchMonthlyAdjusted(symbol: String, searchResult: SearchResult) {
+        isLoading = true
+        service.fetchMonthlyAdjustedPublisher(keywords: symbol).sink { [unowned self] completion in
+            switch completion {
+            case .failure(let error):
+                isLoading = false
+                self.requestError = error.value()
+            case .finished:
+                isLoading = false
+                break
+            }
+        } receiveValue: { monthlyAdjusted in
+            let asset = Asset(searchResult: searchResult, monthlyAdjusted: monthlyAdjusted)
+            self.asset = asset
+            
+        }.store(in: &subscribers)
         
     }
 }

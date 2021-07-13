@@ -3,17 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		175DC6FA9B35C8F54466A516 /* Pods_calculator_calculatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D8262CA75DA9EDBFBB6A22 /* Pods_calculator_calculatorTests.framework */; };
 		6879A2A695867DD20C1A7241 /* Pods_calculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242DA622518D83C169C3DF11 /* Pods_calculator.framework */; };
+		8A2285A0267B3E0B00A5E0BC /* DateSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A22859E267B3E0B00A5E0BC /* DateSelectionController.swift */; };
+		8A2285A1267B3E0B00A5E0BC /* DateSelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A22859F267B3E0B00A5E0BC /* DateSelectionController.xib */; };
+		8A2285A4267B3E6800A5E0BC /* DateSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2285A2267B3E6800A5E0BC /* DateSelectionCell.swift */; };
+		8A2285A5267B3E6800A5E0BC /* DateSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A2285A3267B3E6800A5E0BC /* DateSelectionCell.xib */; };
+		8A31D5EF269D428C0073230C /* CalculatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A31D5EE269D428C0073230C /* CalculatorService.swift */; };
+		8A31D5F1269D6E9A0073230C /* DCAResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A31D5F0269D6E9A0073230C /* DCAResult.swift */; };
+		8A31D5F9269D788B0073230C /* CalculatorPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A31D5F8269D788B0073230C /* CalculatorPresentation.swift */; };
 		8A469C66266D060E0058AB26 /* SearchPlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A469C65266D060E0058AB26 /* SearchPlaceHolderView.swift */; };
 		8A67F4C32678F7B5001F41C8 /* calculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67F4C22678F7B5001F41C8 /* calculatorTests.swift */; };
 		8A67F4C52678F7B5001F41C8 /* calculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7B58FC266B3725006DB76F /* calculator.framework */; };
 		8A67F4CF2678F8A4001F41C8 /* SearchViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67F4CE2678F8A4001F41C8 /* SearchViewModelTest.swift */; };
 		8A67F4D12678F96E001F41C8 /* SearchServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67F4D02678F96E001F41C8 /* SearchServiceMock.swift */; };
+		8A7843D7268223B000D7D133 /* DateSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7843D6268223B000D7D133 /* DateSelectionViewModel.swift */; };
 		8A7B5959266B3C02006DB76F /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7B5958266B3C02006DB76F /* Calculator.swift */; };
 		8A7B595D266B3C2D006DB76F /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7B595B266B3C2D006DB76F /* SearchController.swift */; };
 		8A7B595E266B3C2D006DB76F /* SearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A7B595C266B3C2D006DB76F /* SearchController.xib */; };
@@ -22,6 +30,13 @@
 		8A892039267253D200304410 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A892038267253D200304410 /* SearchViewModel.swift */; };
 		8AA01791266B555B0047C4F8 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA01790266B555B0047C4F8 /* SearchResults.swift */; };
 		8AA017AF266B77400047C4F8 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA017AE266B77400047C4F8 /* SearchService.swift */; };
+		8AEABA782679CFD700F14A3B /* CalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEABA762679CFD700F14A3B /* CalculatorController.swift */; };
+		8AEABA792679CFD700F14A3B /* CalculatorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AEABA772679CFD700F14A3B /* CalculatorController.xib */; };
+		8AEABA7D2679D0AC00F14A3B /* InvestmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEABA7C2679D0AC00F14A3B /* InvestmentView.swift */; };
+		8AEABA7F2679D1C600F14A3B /* InvestmentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AEABA7E2679D1C600F14A3B /* InvestmentView.xib */; };
+		8AEABA842679E51900F14A3B /* MonthlyAdjusted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEABA832679E51900F14A3B /* MonthlyAdjusted.swift */; };
+		8AEABA8D267A4D2300F14A3B /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEABA8C267A4D2300F14A3B /* CalculatorViewModel.swift */; };
+		8AEABA8F267A4DAE00F14A3B /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEABA8E267A4DAE00F14A3B /* Asset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,12 +58,20 @@
 		484699FA0CC41F788D05284A /* Pods-calculatorTests.debug (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-calculatorTests.debug (dev).xcconfig"; path = "Target Support Files/Pods-calculatorTests/Pods-calculatorTests.debug (dev).xcconfig"; sourceTree = "<group>"; };
 		58B1ECDD1C8A78AE6B75DB93 /* Pods-calculator-calculatorTests.release (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-calculator-calculatorTests.release (prod).xcconfig"; path = "Target Support Files/Pods-calculator-calculatorTests/Pods-calculator-calculatorTests.release (prod).xcconfig"; sourceTree = "<group>"; };
 		72ACDCB4937FA5778A481620 /* Pods-calculatorTests.debug (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-calculatorTests.debug (prod).xcconfig"; path = "Target Support Files/Pods-calculatorTests/Pods-calculatorTests.debug (prod).xcconfig"; sourceTree = "<group>"; };
+		8A22859E267B3E0B00A5E0BC /* DateSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionController.swift; sourceTree = "<group>"; };
+		8A22859F267B3E0B00A5E0BC /* DateSelectionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateSelectionController.xib; sourceTree = "<group>"; };
+		8A2285A2267B3E6800A5E0BC /* DateSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionCell.swift; sourceTree = "<group>"; };
+		8A2285A3267B3E6800A5E0BC /* DateSelectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateSelectionCell.xib; sourceTree = "<group>"; };
+		8A31D5EE269D428C0073230C /* CalculatorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorService.swift; sourceTree = "<group>"; };
+		8A31D5F0269D6E9A0073230C /* DCAResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCAResult.swift; sourceTree = "<group>"; };
+		8A31D5F8269D788B0073230C /* CalculatorPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorPresentation.swift; sourceTree = "<group>"; };
 		8A469C65266D060E0058AB26 /* SearchPlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceHolderView.swift; sourceTree = "<group>"; };
 		8A67F4C02678F7B5001F41C8 /* calculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A67F4C22678F7B5001F41C8 /* calculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculatorTests.swift; sourceTree = "<group>"; };
 		8A67F4C42678F7B5001F41C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A67F4CE2678F8A4001F41C8 /* SearchViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTest.swift; sourceTree = "<group>"; };
 		8A67F4D02678F96E001F41C8 /* SearchServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceMock.swift; sourceTree = "<group>"; };
+		8A7843D6268223B000D7D133 /* DateSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionViewModel.swift; sourceTree = "<group>"; };
 		8A7B58FC266B3725006DB76F /* calculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = calculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A7B5900266B3725006DB76F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A7B5958266B3C02006DB76F /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
@@ -59,6 +82,13 @@
 		8A892038267253D200304410 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		8AA01790266B555B0047C4F8 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		8AA017AE266B77400047C4F8 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		8AEABA762679CFD700F14A3B /* CalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorController.swift; sourceTree = "<group>"; };
+		8AEABA772679CFD700F14A3B /* CalculatorController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculatorController.xib; sourceTree = "<group>"; };
+		8AEABA7C2679D0AC00F14A3B /* InvestmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentView.swift; sourceTree = "<group>"; };
+		8AEABA7E2679D1C600F14A3B /* InvestmentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvestmentView.xib; sourceTree = "<group>"; };
+		8AEABA832679E51900F14A3B /* MonthlyAdjusted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyAdjusted.swift; sourceTree = "<group>"; };
+		8AEABA8C267A4D2300F14A3B /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		8AEABA8E267A4DAE00F14A3B /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		91B9A19168996CF5AEDBFD3A /* Pods-calculator-calculatorTests.release (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-calculator-calculatorTests.release (dev).xcconfig"; path = "Target Support Files/Pods-calculator-calculatorTests/Pods-calculator-calculatorTests.release (dev).xcconfig"; sourceTree = "<group>"; };
 		9A227F42C91B1ED3217B13E6 /* Pods-calculator.release (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-calculator.release (dev).xcconfig"; path = "Target Support Files/Pods-calculator/Pods-calculator.release (dev).xcconfig"; sourceTree = "<group>"; };
 		9B45810210688C6DE0BB4D7C /* Pods-calculator-calculatorTests.debug (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-calculator-calculatorTests.debug (prod).xcconfig"; path = "Target Support Files/Pods-calculator-calculatorTests/Pods-calculator-calculatorTests.debug (prod).xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +184,7 @@
 		8A7B58FE266B3725006DB76F /* calculator */ = {
 			isa = PBXGroup;
 			children = (
+				8AEABA802679E4F300F14A3B /* calculator */,
 				8A8920332672525A00304410 /* search */,
 				8A7B5900266B3725006DB76F /* Info.plist */,
 				8A7B5958266B3C02006DB76F /* Calculator.swift */,
@@ -195,6 +226,7 @@
 		8A8920362672527800304410 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				8AEABA832679E51900F14A3B /* MonthlyAdjusted.swift */,
 				8AA01790266B555B0047C4F8 /* SearchResults.swift */,
 			);
 			path = model;
@@ -212,6 +244,67 @@
 			isa = PBXGroup;
 			children = (
 				8AA017AE266B77400047C4F8 /* SearchService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		8AEABA802679E4F300F14A3B /* calculator */ = {
+			isa = PBXGroup;
+			children = (
+				8AEABA89267A4D0200F14A3B /* service */,
+				8AEABA88267A4CF800F14A3B /* viewmodel */,
+				8AEABA852679E58900F14A3B /* view */,
+				8AEABA822679E50800F14A3B /* model */,
+				8AEABA812679E4FA00F14A3B /* controller */,
+			);
+			path = calculator;
+			sourceTree = "<group>";
+		};
+		8AEABA812679E4FA00F14A3B /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				8AEABA762679CFD700F14A3B /* CalculatorController.swift */,
+				8AEABA772679CFD700F14A3B /* CalculatorController.xib */,
+				8A22859E267B3E0B00A5E0BC /* DateSelectionController.swift */,
+				8A22859F267B3E0B00A5E0BC /* DateSelectionController.xib */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		8AEABA822679E50800F14A3B /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8AEABA8E267A4DAE00F14A3B /* Asset.swift */,
+				8A31D5F0269D6E9A0073230C /* DCAResult.swift */,
+				8A31D5F8269D788B0073230C /* CalculatorPresentation.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		8AEABA852679E58900F14A3B /* view */ = {
+			isa = PBXGroup;
+			children = (
+				8AEABA7C2679D0AC00F14A3B /* InvestmentView.swift */,
+				8AEABA7E2679D1C600F14A3B /* InvestmentView.xib */,
+				8A2285A2267B3E6800A5E0BC /* DateSelectionCell.swift */,
+				8A2285A3267B3E6800A5E0BC /* DateSelectionCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		8AEABA88267A4CF800F14A3B /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				8AEABA8C267A4D2300F14A3B /* CalculatorViewModel.swift */,
+				8A7843D6268223B000D7D133 /* DateSelectionViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		8AEABA89267A4D0200F14A3B /* service */ = {
+			isa = PBXGroup;
+			children = (
+				8A31D5EE269D428C0073230C /* CalculatorService.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -326,8 +419,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A2285A1267B3E0B00A5E0BC /* DateSelectionController.xib in Resources */,
+				8AEABA792679CFD700F14A3B /* CalculatorController.xib in Resources */,
+				8A2285A5267B3E6800A5E0BC /* DateSelectionCell.xib in Resources */,
 				8A7B595E266B3C2D006DB76F /* SearchController.xib in Resources */,
 				8A7B597A266B405D006DB76F /* SearchCell.xib in Resources */,
+				8AEABA7F2679D1C600F14A3B /* InvestmentView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,11 +510,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A7B5959266B3C02006DB76F /* Calculator.swift in Sources */,
+				8AEABA8F267A4DAE00F14A3B /* Asset.swift in Sources */,
+				8AEABA842679E51900F14A3B /* MonthlyAdjusted.swift in Sources */,
 				8A892039267253D200304410 /* SearchViewModel.swift in Sources */,
 				8A7B5979266B405D006DB76F /* SearchCell.swift in Sources */,
+				8AEABA782679CFD700F14A3B /* CalculatorController.swift in Sources */,
+				8AEABA7D2679D0AC00F14A3B /* InvestmentView.swift in Sources */,
+				8A31D5F9269D788B0073230C /* CalculatorPresentation.swift in Sources */,
+				8A7843D7268223B000D7D133 /* DateSelectionViewModel.swift in Sources */,
 				8AA017AF266B77400047C4F8 /* SearchService.swift in Sources */,
+				8A2285A0267B3E0B00A5E0BC /* DateSelectionController.swift in Sources */,
 				8AA01791266B555B0047C4F8 /* SearchResults.swift in Sources */,
 				8A469C66266D060E0058AB26 /* SearchPlaceHolderView.swift in Sources */,
+				8AEABA8D267A4D2300F14A3B /* CalculatorViewModel.swift in Sources */,
+				8A31D5F1269D6E9A0073230C /* DCAResult.swift in Sources */,
+				8A31D5EF269D428C0073230C /* CalculatorService.swift in Sources */,
+				8A2285A4267B3E6800A5E0BC /* DateSelectionCell.swift in Sources */,
 				8A7B595D266B3C2D006DB76F /* SearchController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

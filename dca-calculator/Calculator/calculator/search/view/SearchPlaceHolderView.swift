@@ -13,7 +13,7 @@ class SearchPlaceHolderView: UIView {
     //MARK: - Properties
     
     private let imageView: UIImageView = {
-        let image = UIImage(asset: .dca)
+        let image = UIImage(asset: .launch)
         let imageView = UIImageView()
         imageView.image = image
         imageView.contentMode = .scaleAspectFit

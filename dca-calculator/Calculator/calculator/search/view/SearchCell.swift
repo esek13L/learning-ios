@@ -15,9 +15,6 @@ class SearchCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
     
-    var viewModel: SearchViewModel? {
-        didSet {configureUI()}
-    }
     
     override class func awakeFromNib() {
         super.awakeFromNib()
@@ -27,10 +24,7 @@ class SearchCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configureUI() {
-        guard let result = viewModel?.result else {
-            return
-        }
+    func configureUI(with result: SearchResult) {
         nameLabel.numberOfLines = 4
         nameLabel.text = result.name
         symbolLabel.text = result.symbol

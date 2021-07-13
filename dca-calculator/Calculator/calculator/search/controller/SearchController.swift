@@ -26,14 +26,11 @@ public class SearchController: UIViewController, UIAnimatable {
         setupView()
         setupViewModel()
         observeForm()
-       
-        
-        
     }
     
     //MARK: - Helpers
     
-    func setupView() {
+    private func setupView() {
         navigationItem.title = "Search"
         
         searchBar.placeholder = "Enter a company name or symbol"
@@ -43,9 +40,10 @@ public class SearchController: UIViewController, UIAnimatable {
         tableView.register(UINib(nibName: "SearchCell", bundle: Bundle(for: type(of: self))), forCellReuseIdentifier: SEARCH_CELL_ID)
         tableView.tableFooterView = UIView()
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
-    func setupViewModel() {
+    private func setupViewModel() {
         viewModel = SearchViewModel(service: service)
     }
     
@@ -84,17 +82,29 @@ public class SearchController: UIViewController, UIAnimatable {
         viewModel.$results
             .receive(on: DispatchQueue.main)
             .sink { [unowned self] searchResults in
-            viewModel.isLoading = false
-            tableView.reloadData()
-        }.store(in: &viewModel.subscribers)
+                tableView.reloadData()
+            }.store(in: &viewModel.subscribers)
+        
+        viewModel.$asset
+            .receive(on: DispatchQueue.main)
+            .sink {[unowned self] asset in
+                guard let asset = asset else { return }
+                startCalculatorController(asset: asset)
+            }.store(in: &viewModel.subscribers)
         
         viewModel.$requestError.sink { requestError in
             guard let error = requestError else { return }
             print(error)
         }.store(in: &viewModel.subscribers)
-        
-       
-        
+    }
+    
+    private func startCalculatorController(asset: Asset) {
+        let controller = CalculatorController(nibName: "CalculatorController", bundle: Bundle(for: type(of: self)))
+        let calculatorService = CalculatorService()
+        let calculatorViewModel = CalculatorViewModel(service: calculatorService)
+        calculatorViewModel.asset = asset
+        controller.viewModel = calculatorViewModel
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
@@ -125,9 +135,21 @@ extension SearchController: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SEARCH_CELL_ID, for: indexPath) as! SearchCell
-        viewModel.result = viewModel.results?.items[indexPath.row]
-        cell.viewModel = viewModel
+        if let results = viewModel.results?.items {
+            cell.configureUI(with: results[indexPath.row])
+        }
         return cell
+    }
+}
+
+//MARK: - UITableViewDelegate
+
+extension SearchController: UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let result = viewModel.results?.items[indexPath.row] else { return }
+        viewModel.fetchMonthlyAdjusted(symbol: result.symbol, searchResult: result)
+        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
 }
 
