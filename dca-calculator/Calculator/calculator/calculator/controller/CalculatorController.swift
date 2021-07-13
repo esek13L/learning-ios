@@ -29,8 +29,7 @@ class CalculatorController: UIViewController {
     
     private func setupViewModel() {
         if viewModel == nil {
-            let service = CalculatorService()
-            viewModel = CalculatorViewModel(service: service)
+            viewModel = CalculatorViewModel()
         }
     }
     

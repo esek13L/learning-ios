@@ -100,8 +100,7 @@ public class SearchController: UIViewController, UIAnimatable {
     
     private func startCalculatorController(asset: Asset) {
         let controller = CalculatorController(nibName: "CalculatorController", bundle: Bundle(for: type(of: self)))
-        let calculatorService = CalculatorService()
-        let calculatorViewModel = CalculatorViewModel(service: calculatorService)
+        let calculatorViewModel = CalculatorViewModel()
         calculatorViewModel.asset = asset
         controller.viewModel = calculatorViewModel
         navigationController?.pushViewController(controller, animated: true)
